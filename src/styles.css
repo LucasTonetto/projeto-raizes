@@ -1,0 +1,158 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/*
+ * Raízes — design system
+ * Deep near-black warm ink, antique gold, deep burgundy wine.
+ * Display: Cormorant Garamond. Body: Karla.
+ */
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Karla", "Segoe UI", Helvetica, sans-serif;
+
+  --color-ink: oklch(0.135 0.012 70);
+  --color-ink-deep: oklch(0.1 0.008 70);
+  --color-surface: oklch(0.18 0.014 70);
+  --color-cream: oklch(0.93 0.032 85);
+  --color-cream-muted: oklch(0.74 0.03 80);
+  --color-faint: oklch(0.55 0.022 75);
+  --color-gold: oklch(0.76 0.125 85);
+  --color-gold-bright: oklch(0.87 0.105 88);
+  --color-gold-deep: oklch(0.62 0.1 80);
+  --color-wine: oklch(0.42 0.13 25);
+  --color-wine-bright: oklch(0.54 0.15 25);
+  --color-line: oklch(0.76 0.125 85 / 0.16);
+  --color-line-strong: oklch(0.76 0.125 85 / 0.34);
+
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-cream);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: oklch(0.76 0.125 85 / 0.28);
+    color: var(--color-cream);
+  }
+
+  /* Subtle paper grain over everything */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Warm radial glows used behind hero and statement sections */
+.aura-hero {
+  background:
+    radial-gradient(55% 42% at 50% 36%, oklch(0.55 0.09 80 / 0.16), transparent 72%),
+    radial-gradient(85% 60% at 50% 115%, oklch(0.32 0.07 28 / 0.2), transparent 70%);
+}
+
+.aura-soft {
+  background: radial-gradient(60% 50% at 50% 40%, oklch(0.4 0.05 75 / 0.1), transparent 72%);
+}
+
+/* Thin vertical scroll cue */
+.scroll-line {
+  display: block;
+  width: 1px;
+  height: 58px;
+  background: linear-gradient(to bottom, var(--color-gold), transparent);
+  transform-origin: top;
+  animation: scroll-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.55);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* Gilded divider */
+.gilded-rule {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-line-strong) 30%,
+    var(--color-gold) 50%,
+    var(--color-line-strong) 70%,
+    transparent
+  );
+}
+
+/* Pull quotes */
+.pull-quote {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.pull-quote em {
+  font-style: normal;
+  color: var(--color-gold-bright);
+}
+
+/* Oversized display numerals */
+.stat-value {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-gold);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
