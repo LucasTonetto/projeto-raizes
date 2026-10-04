@@ -254,7 +254,7 @@ function Index() {
         </Reveal>
         <Reveal delay={150}>
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Raízes — águia, livro aberto e raízes douradas"
             width={512}
             height={512}
@@ -423,7 +423,7 @@ function Index() {
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
           <Reveal>
             <img
-              src={nookAsset.url}
+              src={nookAsset}
               alt="Poltrona vermelha, luminária e estante de livros em iluminação quente"
               width={1152}
               height={768}
@@ -671,7 +671,7 @@ function Index() {
       <footer className="mt-16 border-t border-line px-6 py-14">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Raízes"
             width={128}
             height={128}
