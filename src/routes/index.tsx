@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
 });
 
 /* ---------------------------------- utils --------------------------------- */
-
+  
 function Reveal({
   children,
   delay = 0,
