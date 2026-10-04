@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
 });
 
 /* ---------------------------------- utils --------------------------------- */
-  
+
 function Reveal({
   children,
   delay = 0,
@@ -205,9 +205,9 @@ const pillars = [
 ];
 
 const ministries = [
-  { name: "Ministério de Jovens", role: "Indicação de livros e clube de leitura." },
-  { name: "Pequenos grupos", role: "Leituras ligadas aos temas estudados." },
+  { name: "EBD", role: "Indicação de livros relacionados às aulas." },
   { name: "Ministério Infantil", role: "Acervo infantil e incentivo à leitura." },
+  { name: "Ministério Pré Teens e Vibe", role: "Histórias em Quadrinhos e livros juvenis." },
   { name: "Liderança", role: "Trilhas de formação." },
   { name: "Famílias", role: "Livros sobre educação, casamento e relacionamentos." },
 ];
