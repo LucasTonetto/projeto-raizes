@@ -625,6 +625,146 @@ function Index() {
         </div>
       </Section>
 
+      {/* ------------------------ 11 · aquisição dos livros ------------------ */}
+      <Section
+        index="11"
+        eyebrow="A implantação"
+        title="Aquisição dos livros"
+        intro="A aquisição inicial dos livros será realizada por meio de um investimento destinado à implantação do projeto, podendo ser complementada posteriormente por doações, campanhas e parcerias."
+      >
+        <div className="grid gap-10 sm:grid-cols-2">
+          <Reveal>
+            <div className="border-l-2 border-line-strong pl-6">
+              <p className="font-display text-2xl text-gold-bright">Um começo intencional</p>
+              <p className="mt-4 leading-relaxed text-cream-muted">
+                O investimento inicial permitirá dar início ao acervo junto com a implantação do
+                projeto.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="border-l-2 border-line-strong pl-6">
+              <p className="font-display text-2xl text-gold-bright">Um acervo em construção</p>
+              <p className="mt-4 leading-relaxed text-cream-muted">
+                A coleção crescerá gradualmente, priorizando livros alinhados à proposta da
+                biblioteca e recebendo, quando possível, doações, campanhas e parcerias.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* --------------------------- 12 · espaço físico ---------------------- */}
+      <Section
+        index="12"
+        eyebrow="O espaço"
+        title="Uma estrutura simples, pronta para crescer"
+        intro="Inicialmente, o projeto será implantado por meio de uma estante de livros, localizada em um espaço de fácil acesso e circulação dentro da igreja."
+      >
+        <div className="grid gap-5 sm:grid-cols-2">
+          <Reveal>
+            <div className="h-full rounded-lg border border-line bg-surface/40 p-7">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold">
+                Implantação
+              </p>
+              <p className="mt-4 leading-relaxed text-cream-muted">
+                A estante e a estrutura inicial serão adquiridas junto com a implantação do
+                projeto.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="h-full rounded-lg border border-line bg-surface/40 p-7">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold">
+                Próximos passos
+              </p>
+              <p className="mt-4 leading-relaxed text-cream-muted">
+                Conforme o acervo e a utilização crescerem, o espaço poderá ser ampliado.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* ---------------------- 13 · retirada e devolução -------------------- */}
+      <Section
+        index="13"
+        eyebrow="O funcionamento"
+        title="Retirada e devolução"
+        intro="Um processo simples registra a circulação dos livros e ajuda a manter o acervo organizado."
+      >
+        <div className="grid gap-5 lg:grid-cols-2">
+          <Reveal>
+            <div className="h-full rounded-lg border border-line bg-surface/40 p-7 sm:p-8">
+              <h3 className="font-display text-2xl text-gold-bright">Retirada</h3>
+              <p className="mt-3 text-sm leading-relaxed text-cream-muted">
+                A pessoa preenche um formulário com:
+              </p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Nome",
+                  "Faixa etária",
+                  "Gênero",
+                  "Telefone/WhatsApp",
+                  "Livro retirado",
+                  "Data da retirada",
+                  "Data prevista para devolução",
+                ].map((field) => (
+                  <li key={field} className="flex items-baseline gap-3 text-sm text-cream-muted">
+                    <span className="h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" aria-hidden />
+                    {field}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="h-full rounded-lg border border-line bg-surface/40 p-7 sm:p-8">
+              <h3 className="font-display text-2xl text-gold-bright">Devolução</h3>
+              <p className="mt-3 text-sm leading-relaxed text-cream-muted">
+                Na devolução, a pessoa preenche um segundo formulário com:
+              </p>
+              <ul className="mt-6 space-y-3">
+                {["Nome", "Livro devolvido", "Data da devolução"].map((field) => (
+                  <li key={field} className="flex items-baseline gap-3 text-sm text-cream-muted">
+                    <span className="h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" aria-hidden />
+                    {field}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 border-t border-line pt-5 text-sm leading-relaxed text-cream-muted">
+                Depois, uma pessoa responsável confirma fisicamente a devolução e atualiza o
+                controle.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+        <div className="mt-5 grid gap-5 sm:grid-cols-2">
+          <Reveal>
+            <p className="border-l-2 border-line-strong pl-5 text-sm leading-relaxed text-cream-muted">
+              O prazo será predefinido pelo projeto, por exemplo, 14 dias. O telefone será usado
+              principalmente para comunicação sobre a devolução; os demais dados ajudam a entender
+              quem utiliza o acervo e quais livros são procurados.
+            </p>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="border-l-2 border-line-strong pl-5 text-sm leading-relaxed text-cream-muted">
+              Cada livro terá, na contracapa, uma etiqueta informando que pertence à PIBG e um
+              código único para identificar o exemplar emprestado.
+            </p>
+          </Reveal>
+        </div>
+        <Reveal>
+          <div className="mt-10">
+            <FlowRow
+              label="Etapas do empréstimo"
+              steps={["Retirada", "Registro", "Prazo", "Devolução", "Confirmação"]}
+              highlight
+            />
+          </div>
+        </Reveal>
+      </Section>
+
       {/* ------------------------------ manifesto ----------------------------- */}
       <section className="relative mx-auto w-full max-w-4xl px-6 pb-8 pt-24 text-center sm:pt-32">
         <div className="aura-soft pointer-events-none absolute inset-0" aria-hidden />
